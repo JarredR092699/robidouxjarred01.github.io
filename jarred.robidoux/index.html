@@ -1,0 +1,23 @@
+---
+layout: default
+title: Jarred Robidoux
+---
+
+{% if site.posts.size > 0 %}
+<section class="content-section">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="post-item">
+        <div class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </div>
+        <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% else %}
+<section class="content-section">
+  <p>Welcome to my personal site. I'll be sharing thoughts on coding, life, and everything in between.</p>
+</section>
+{% endif %}
