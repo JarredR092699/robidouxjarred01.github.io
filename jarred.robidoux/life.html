@@ -6,19 +6,15 @@ title: Life
 <section class="content-section">
   <h1>life</h1>
   
-  {% assign life_posts = site.posts | where: "categories", "life" %}
-  
-  {% if life_posts.size > 0 %}
-    <ul class="post-list">
-      {% for post in life_posts %}
-        <li class="post-item">
-          <div class="post-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </div>
-          <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-  {% endif %}
+  <div class="photo-gallery">
+    <div class="photo-item">
+      <img src="/assets/images/johnny_1s.jpeg" alt="Johnny's first moments">
+      <em>Seiverville, TN 6/28/25</em>
+    </div>
+    
+    <div class="photo-item">
+      <img src="/assets/images/johnny_wedding.png" alt="Johnny at the wedding">
+      <em>Johnny's Wedding 7/19/25</em>
+    </div>
+  </div>
 </section>

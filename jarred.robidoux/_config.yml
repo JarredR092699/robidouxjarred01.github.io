@@ -24,7 +24,7 @@ email: JarredRobidoux@gmail.com
 description: >- 
   Personal site and blog documenting coding projects, thoughts, and life.
 baseurl: "" 
-url: "" 
+url: "https://jarredrobidoux.com" 
 github_username: JarredR092699
 
 # Build settings
