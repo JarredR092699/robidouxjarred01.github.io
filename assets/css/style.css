@@ -106,6 +106,13 @@ body {
     white-space: nowrap;
 }
 
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 /* Content sections */
 .content-section {
     margin-bottom: 3em;
