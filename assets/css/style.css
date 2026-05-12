@@ -20,22 +20,41 @@ body {
     margin-bottom: 60px;
 }
 
-.signature h1 {
-    font-family: 'Hurricane', 'cursive';
-    font-size: 48px;
-    font-weight: normal;
-    font-style: italic;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.signature h1 a {
-    color: #333;
+.header-home-link {
+    display: block;
     text-decoration: none;
+    color: inherit;
+    margin-bottom: 24px;
 }
 
-.signature h1 a:hover {
+.header-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    margin: 0 auto 14px;
+}
+
+.header-name {
+    font-family: 'Hurricane', cursive;
+    font-size: 36px;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.header-home-link:hover .header-name {
     color: #666;
+}
+
+.header-tagline {
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 0.3px;
+    margin: 0;
 }
 
 .navigation {
@@ -226,6 +245,80 @@ body {
     color: #666;
     font-size: 14px;
     font-style: italic;
+}
+
+/* Home one-sheeter */
+.home-intro {
+    margin-bottom: 48px;
+    color: #666;
+    font-size: 15px;
+}
+
+.home-section {
+    margin-bottom: 44px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.home-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 14px;
+}
+
+.home-section-title {
+    font-family: 'Georgia', serif;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999;
+    margin: 0;
+}
+
+.home-section-title a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.home-section-title a:hover {
+    color: #333;
+}
+
+.home-section-more {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.home-section-more:hover {
+    color: #333;
+}
+
+.home-section-empty {
+    color: #bbb;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.home-section-bio {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.home-section-bio a {
+    color: #666;
+    text-decoration: none;
+}
+
+.home-section-bio a:hover {
+    color: #333;
 }
 
 /* Responsive design */

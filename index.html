@@ -3,21 +3,66 @@ layout: default
 title: Jarred Robidoux
 ---
 
-{% if site.posts.size > 0 %}
-<section class="content-section">
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li class="post-item">
-        <div class="post-title">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </div>
-        <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
-      </li>
-    {% endfor %}
-  </ul>
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title"><a href="{{ '/work' | relative_url }}">work</a></h2>
+    <a class="home-section-more" href="{{ '/work' | relative_url }}">all →</a>
+  </div>
+  {% assign work_posts = site.posts | where: "categories", "work" | limit: 3 %}
+  {% if work_posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in work_posts %}
+        <li class="post-item">
+          <div class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+          <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="home-section-empty">Coming soon.</p>
+  {% endif %}
 </section>
-{% else %}
-<section class="content-section">
-  <p></p>
+
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title"><a href="{{ '/music' | relative_url }}">music</a></h2>
+    <a class="home-section-more" href="{{ '/music' | relative_url }}">all →</a>
+  </div>
+  {% assign music_posts = site.posts | where: "categories", "music" | limit: 3 %}
+  {% if music_posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in music_posts %}
+        <li class="post-item">
+          <div class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+          <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="home-section-empty">Coming soon.</p>
+  {% endif %}
 </section>
-{% endif %}
+
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title"><a href="{{ '/writing' | relative_url }}">writing</a></h2>
+    <a class="home-section-more" href="{{ '/writing' | relative_url }}">all →</a>
+  </div>
+  {% assign writing_posts = site.posts | where: "categories", "writing" | limit: 3 %}
+  {% if writing_posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in writing_posts %}
+        <li class="post-item">
+          <div class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+          <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</section>

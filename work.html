@@ -1,0 +1,23 @@
+---
+layout: default
+title: Work
+---
+
+<section class="content-section">
+  <h1>work</h1>
+
+  {% assign work_posts = site.posts | where: "categories", "work" %}
+
+  {% if work_posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in work_posts %}
+        <li class="post-item">
+          <div class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+          <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</section>
