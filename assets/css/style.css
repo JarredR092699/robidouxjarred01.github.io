@@ -269,6 +269,15 @@ body {
     margin: 28px 0 10px;
 }
 
+/* Life page quote */
+.life-quote {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 24px;
+}
+
 /* Photo collage */
 .photo-collage {
     columns: 2;
