@@ -231,6 +231,42 @@ body {
     line-height: 1.7;
 }
 
+.about-content p {
+    margin-bottom: 1.2em;
+}
+
+.about-content a {
+    color: #5a8fa8;
+    text-decoration: none;
+    border-bottom: 1px solid #a8cad8;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.about-content a:hover {
+    color: #3a6f88;
+    border-bottom-color: #5a8fa8;
+}
+
+.bible-verse {
+    border-left: 2px solid #ddd;
+    padding-left: 1.2em;
+    margin: 1.8em 0;
+    color: #555;
+}
+
+.bible-verse p {
+    font-style: italic;
+    margin-bottom: 0.4em;
+}
+
+.bible-verse cite {
+    display: block;
+    font-style: normal;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 0.3px;
+}
+
 /* Photo gallery */
 .photo-gallery {
     display: grid;
