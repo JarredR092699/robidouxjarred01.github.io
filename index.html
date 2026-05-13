@@ -5,21 +5,65 @@ title: Jarred Robidoux
 
 <section class="home-section">
   <div class="home-section-header">
+    <h2 class="home-section-title"><a href="{{ '/about' | relative_url }}">about</a></h2>
+  </div>
+  <p class="home-section-bio">Hey, I'm Jarred Robidoux 👋🏻 </p>
+    <p class="home-section-bio">I'm passionate about people, technology, and how they can come together to make a better world. </p>
+    <p class="home-section-bio">Currently, I'm helping the team at <a href="https://sp-ark-labs.com/" target="_blank">sp-ark labs</a> build AI automations across their business.</p>
+    <p class="home-section-bio">Learn more about me <a href="{{ '/about' | relative_url }}">here.</a></p>
+</section>
+
+<section class="home-section">
+  <div class="home-section-header">
     <h2 class="home-section-title"><a href="{{ '/work' | relative_url }}">work</a></h2>
     <a class="home-section-more" href="{{ '/work' | relative_url }}">all →</a>
   </div>
-  {% assign work_posts = site.posts | where: "categories", "work" | limit: 3 %}
+  {% assign work_posts = site.posts | where: "categories", "work" %}
   {% if work_posts.size > 0 %}
-    <ul class="post-list">
-      {% for post in work_posts %}
-        <li class="post-item">
-          <div class="post-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </div>
-          <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
-        </li>
-      {% endfor %}
-    </ul>
+    {% assign automation_posts = work_posts | where: "group", "ai-automations" %}
+    {% if automation_posts.size > 0 %}
+      <p class="writing-subheading">AI Automations</p>
+      <ul class="work-card-list">
+        {% for post in automation_posts %}
+          <li class="work-card">
+            {% if post.thumbnail %}
+              <img class="work-card-thumbnail" src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+            {% endif %}
+            <div class="work-card-body">
+              <div class="work-card-title">{{ post.title }}</div>
+              <div class="work-card-summary">{{ post.summary }}</div>
+              {% if post.linkedin_url %}
+                <a class="work-card-link" href="{{ post.linkedin_url }}" target="_blank">View on LinkedIn →</a>
+              {% elsif post.video_url %}
+                <a class="work-card-link" href="{{ post.video_url }}" target="_blank">Watch on YouTube →</a>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% assign agentic_posts = work_posts | where: "group", "agentic-data-engineering" %}
+    {% if agentic_posts.size > 0 %}
+      <p class="writing-subheading">Agentic Data Engineering</p>
+      <ul class="work-card-list">
+        {% for post in agentic_posts %}
+          <li class="work-card">
+            {% if post.thumbnail %}
+              <img class="work-card-thumbnail" src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+            {% endif %}
+            <div class="work-card-body">
+              <div class="work-card-title">{{ post.title }}</div>
+              <div class="work-card-summary">{{ post.summary }}</div>
+              {% if post.linkedin_url %}
+                <a class="work-card-link" href="{{ post.linkedin_url }}" target="_blank">View on LinkedIn →</a>
+              {% elsif post.video_url %}
+                <a class="work-card-link" href="{{ post.video_url }}" target="_blank">Watch on YouTube →</a>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   {% else %}
     <p class="home-section-empty">Coming soon.</p>
   {% endif %}

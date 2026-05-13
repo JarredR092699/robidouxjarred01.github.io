@@ -5,4 +5,34 @@ title: Writing
 
 <section class="content-section">
   <h1>writing</h1>
+
+  {% assign business_posts = site.posts | where: "categories", "writing" | where: "subcategory", "business" %}
+  {% if business_posts.size > 0 %}
+    <p class="writing-subheading">Business</p>
+    <ul class="post-list">
+      {% for post in business_posts %}
+        <li class="post-item">
+          <div class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+          <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% assign faith_posts = site.posts | where: "categories", "writing" | where: "subcategory", "faith" %}
+  {% if faith_posts.size > 0 %}
+    <p class="writing-subheading">Faith</p>
+    <ul class="post-list">
+      {% for post in faith_posts %}
+        <li class="post-item">
+          <div class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+          <div class="post-date">{{ post.date | date: "%b %d, %Y" | upcase }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 </section>
