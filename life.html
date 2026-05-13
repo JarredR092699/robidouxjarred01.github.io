@@ -10,37 +10,89 @@ title: Life
 
   <div class="photo-collage">
     <div class="collage-item">
-      <img src="/assets/images/life/johnny_1s.jpeg" alt="Johnny's first moments">
+      <a class="lightbox-trigger" href="/assets/images/life/johnny_1s.jpeg">
+        <img src="/assets/images/life/johnny_1s.jpeg" alt="Johnny's first moments">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/mj-beach.JPEG" alt="">
+      <a class="lightbox-trigger" href="/assets/images/life/mj-beach.JPEG">
+        <img src="/assets/images/life/mj-beach.JPEG" alt="">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/johnny_wedding.png" alt="Johnny's Wedding">
+      <a class="lightbox-trigger" href="/assets/images/life/johnny_wedding.png">
+        <img src="/assets/images/life/johnny_wedding.png" alt="Johnny's Wedding">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/ej-pickle.JPEG" alt="">
+      <a class="lightbox-trigger" href="/assets/images/life/ej-pickle.JPEG">
+        <img src="/assets/images/life/ej-pickle.JPEG" alt="">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/radiant_boys.jpg" alt="Dream Team Conference">
+      <a class="lightbox-trigger" href="/assets/images/life/radiant_boys.jpg">
+        <img src="/assets/images/life/radiant_boys.jpg" alt="Dream Team Conference">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/mj-half.JPG" alt="">
+      <a class="lightbox-trigger" href="/assets/images/life/mj-half.JPG">
+        <img src="/assets/images/life/mj-half.JPG" alt="">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/miami_tg_831.jpeg" alt="Miami Gardens, FL">
+      <a class="lightbox-trigger" href="/assets/images/life/miami_tg_831.jpeg">
+        <img src="/assets/images/life/miami_tg_831.jpeg" alt="Miami Gardens, FL">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/emaw-trees.JPG" alt="">
+      <a class="lightbox-trigger" href="/assets/images/life/emaw-trees.JPG">
+        <img src="/assets/images/life/emaw-trees.JPG" alt="">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/bbbs-radiant-drive.jpg" alt="">
+      <a class="lightbox-trigger" href="/assets/images/life/bbbs-radiant-drive.jpg">
+        <img src="/assets/images/life/bbbs-radiant-drive.jpg" alt="">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/aj-uncreated.JPEG" alt="">
+      <a class="lightbox-trigger" href="/assets/images/life/aj-uncreated.JPEG">
+        <img src="/assets/images/life/aj-uncreated.JPEG" alt="">
+      </a>
     </div>
     <div class="collage-item">
-      <img src="/assets/images/life/mj-rays.jpg" alt="">
+      <a class="lightbox-trigger" href="/assets/images/life/mj-rays.jpg">
+        <img src="/assets/images/life/mj-rays.jpg" alt="">
+      </a>
     </div>
   </div>
 </section>
+
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  var triggers = document.querySelectorAll('.lightbox-trigger');
+  var lightbox  = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+
+  triggers.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      lightboxImg.src = this.href;
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightbox.addEventListener('click', function() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    }
+  });
+</script>

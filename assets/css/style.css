@@ -290,10 +290,42 @@ body {
     margin-bottom: 6px;
 }
 
+.collage-item a {
+    display: block;
+}
+
 .collage-item img {
     width: 100%;
     height: auto;
     display: block;
+    transition: opacity 0.2s ease;
+}
+
+.collage-item a:hover img {
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
 }
 
 /* Home one-sheeter */
